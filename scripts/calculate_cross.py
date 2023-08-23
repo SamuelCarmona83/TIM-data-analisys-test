@@ -1,13 +1,21 @@
 import psycopg2
 from psycopg2 import extras
+import os
+from dotenv import load_dotenv
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
 
 # Parámetros de la base de datos
 db_params = {
-    "dbname": "mydb",
-    "user": "myuser",
-    "password": "mypassword",
-    "host": "localhost",
-    "port": "5432"
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "host": os.getenv("DB_HOST"),
+    "port": os.getenv("DB_PORT")
 }
 
 # Consulta única para obtener datos de ambas tablas
