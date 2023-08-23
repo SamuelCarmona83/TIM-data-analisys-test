@@ -6,9 +6,6 @@ from dotenv import load_dotenv
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
-# Cargar las variables de entorno desde el archivo .env
-load_dotenv()
-
 # Parámetros de la base de datos
 db_params = {
     "dbname": os.getenv("DB_NAME"),
@@ -41,7 +38,6 @@ with psycopg2.connect(**db_params) as conn:
         all_transacciones = cursor.fetchall()
 
 transacciones_bansur_dict = {trans['tarjeta']: trans for trans in all_transacciones if trans['source'] == 'bansur'}
-
 transacciones_cruzadas = 0
 transacciones_totales = len([trans for trans in all_transacciones if trans['source'] == 'clap'])
 
