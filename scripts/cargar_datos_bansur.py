@@ -5,9 +5,6 @@ import csv
 from datetime import datetime
 from dotenv import load_dotenv
 
-# Parámetros de la base de datos
-
-# Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 db_params = {
     "dbname": os.getenv("DB_NAME"),
@@ -17,7 +14,6 @@ db_params = {
     "port": os.getenv("DB_PORT")
 }
 
-# Conexión a la base de datos
 connection = psycopg2.connect(**db_params)
 cursor = connection.cursor()
 
@@ -41,7 +37,6 @@ CREATE TABLE bansur (
 cursor.execute(create_table_query)
 connection.commit()
 
-# Import data
 # Import data
 # Open the CSV file using csv.reader
 with open('./scripts/csv_files/BANSUR.csv', 'r') as f:

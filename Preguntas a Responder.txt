@@ -1,11 +1,17 @@
 1. Escriba el código de SQL que le permite conocer el monto y la cantidad de las transacciones que SIMETRIK considera como conciliables para la base de CLAP
+- ./scripts/querys/conciliables_clap.sql
 
 2. Escriba el código de SQL que le permite conocer el monto y la cantidad de las transacciones que SIMETRIK considera como conciliables para la base de BANSUR
+- ./scripts/querys/conciliables_bansur.sql
 
 3. ¿Cómo se comparan las cifras de los puntos anteriores respecto de las cifras totales en las fuentes desde un punto de vista del negocio?
+- Desde un punto de vista del negocio, comparar las cifras de las transacciones conciliables con las cifras totales en las fuentes puede proporcionar información valiosa sobre la conciliación y la calidad de los registros, tambien si existen desviaciones o errores en las transacciones. 
 
 4. Teniendo en cuenta los criterios de cruce entre ambas bases conciliables, escriba una sentencia de SQL que contenga la información de CLAP y BANSUR; agregue una columna en la que se evidencie si la transacción cruzó o no con su contrapartida y una columna en la que se inserte un ID autoincremental para el control de la conciliación
+- ./scripts/querys/cross_report.sql
 
 5. Diseñe un código que calcule el porcentaje de transacciones de la base conciliable de CLAP cruzó contra la liquidación de BANSUR.
+- Porcentaje de transacciones cruzadas: 37.38%
 
 6. Diseñe un código que calcule el porcentaje de transacciones de la base conciliable de BANSUR no cruzó contra la liquidación de CLAP.
+- Porcentaje de transacciones no cruzadas: 38.31%

@@ -7,7 +7,7 @@ ENV POSTGRES_PASSWORD mypassword
 ENV POSTGRES_DB mydb
 
 # Install necessary Python libraries
-RUN pip install psycopg2 Flask  # Install Flask here
+RUN pip install psycopg2 Flask python-dotenv
 
 # Set the working directory
 WORKDIR /app

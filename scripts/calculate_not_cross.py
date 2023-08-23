@@ -30,7 +30,6 @@ with psycopg2.connect(**db_params) as conn:
         cursor.execute(query_crossed_transactions)
         crossed_count = cursor.fetchone()[0]
 
-# Consulta para obtener el total de transacciones en la tabla CLAP
 query_total_clap_transactions = """
     SELECT COUNT(*) FROM clap
 """

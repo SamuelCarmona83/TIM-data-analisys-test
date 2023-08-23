@@ -5,7 +5,6 @@ import csv
 from datetime import datetime
 from dotenv import load_dotenv
 
-# Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
 # Parámetros de la base de datos
@@ -43,14 +42,12 @@ cursor.execute(create_table_query)
 connection.commit()
 
 # Import data
-# Import data
 # Open the CSV file using csv.reader
 with open('./scripts/csv_files/CLAP.csv', 'r') as f:
     csv_reader = csv.reader(f)
     next(csv_reader)  # Skip the header row
 
     for row in csv_reader:
-        # Modify the row if needed
         # For example, replace empty values with a placeholder
         corrected_row = [value if value else 'TEMPORAL_EMPTY_VALUE' for value in row]
 
